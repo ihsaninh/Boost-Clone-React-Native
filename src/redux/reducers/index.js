@@ -5,6 +5,8 @@ import RootNavigation from "./../../navigations/RootNavigation";
 
 const router = createNavigationReducer(RootNavigation);
 
-export default {
+const appReducer = combineReducers({
   router,
-};
+})
+
+export default appReducer

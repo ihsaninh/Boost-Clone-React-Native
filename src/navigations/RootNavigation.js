@@ -1,6 +1,7 @@
 import AuthLoading from '../screens/AuthLoading';
 import Login from "../screens/Login"
-import Navtabs from "../screens/Navtabs"
+import Register from "../screens/Register"
+import Navtabs from "./Navtabs"
 
 import { createStackNavigator, createAppContainer, createSwitchNavigator } from 'react-navigation'
 
@@ -23,7 +24,11 @@ const AuthStack = createStackNavigator(
     {
         Login: {
             screen: Login,
-            navigationOptions: { gesturesEnabled: true, header: null }
+            navigationOptions: { gesturesEnabled: true }
+        },
+        Register: {
+            screen: Register,
+            navigationOptions: { gesturesEnabled: true}
         }
     },
     {
@@ -37,11 +42,11 @@ const AuthStack = createStackNavigator(
 const AppContainer = createAppContainer(createSwitchNavigator(
     {
         AuthLoading: AuthLoading,
-        Auth: AuthStack,
         App: AppStack,
+        Auth: AuthStack,
     },
     {
-        initialRouteName: 'App',
+        initialRouteName: 'AuthLoading',
         resetOnBlur: true,
     }
 ));

@@ -1,14 +1,9 @@
-import React from 'react';
-import {
-	View,
-	Image,
-	Text,
-	StyleSheet
-} from 'react-native';
-import peopleimg from '../../../assets/img/people.jpg';
+import React from "react";
+import { View, Image, Text, StyleSheet } from "react-native";
+import peopleimg from "../../../assets/img/people.jpg";
 
-const BoostCash = (props) => {
-	const { title, subtitle } = props;
+const BoostCash = props => {
+  const { title, subtitle } = props;
   return (
     <View style={styles.cardContainer}>
       <View style={styles.cardContent}>
@@ -17,18 +12,15 @@ const BoostCash = (props) => {
           <Text style={styles.cardContentSubtitle}>{subtitle}</Text>
         </View>
         <View style={styles.cardContentBanner}>
-          <Image
-            source={peopleimg}
-            style={styles.cardContentBannerImg}
-          />
+          <Image source={peopleimg} style={styles.cardContentBannerImg} />
         </View>
       </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
-	cardContainer: {
+  cardContainer: {
     height: 150,
     width: "auto",
     elevation: 1,
@@ -63,7 +55,7 @@ const styles = StyleSheet.create({
   cardContentBannerImg: {
     width: 150,
     height: 150
-  },
+  }
 });
 
 export default BoostCash;

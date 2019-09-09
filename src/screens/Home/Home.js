@@ -2,18 +2,16 @@ import React, { Component } from "react";
 import {
   View,
   Text,
-  ImageBackground,
   StyleSheet,
   Image,
   StatusBar,
   ScrollView,
   RefreshControl,
-  Dimensions
 } from "react-native";
 import { Icon } from "react-native-elements";
 import BoostHeader from "./components/BoostHeader";
 import BoostCash from "./components/BoostCash";
-import BoostQuiz from './components/BoostQuiz';
+import BoostQuiz from "./components/BoostQuiz";
 import Bg from "../../assets/img/bg2.png";
 
 class Home extends Component {
@@ -231,7 +229,7 @@ const styles = StyleSheet.create({
   },
   // Boost Quiz
   boostQuizContainer: {
-    marginTop: 20,
+    marginTop: 20
   },
   contentContainer: {
     paddingLeft: 20
@@ -240,7 +238,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     marginRight: 10,
     borderColor: "#E1DFE1",
-    borderWidth: 1,
+    borderWidth: 1
   },
   boostQuizCardImg: {
     height: 150,

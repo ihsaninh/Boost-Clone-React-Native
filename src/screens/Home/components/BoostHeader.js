@@ -1,23 +1,19 @@
-import React from 'react';
-import {
-  StyleSheet,
-  View,
-  Text
-} from 'react-native';
+import React from "react";
+import { StyleSheet, View, Text } from "react-native";
 import { Icon } from "react-native-elements";
 
-const BoostHeader = (props) => {
-	const { text } = props;
-	return (
-		<View style={styles.header}>
-	    <Text style={styles.headerGreetingText}>{text}</Text>
-	    <Icon name="mail" type="material" size={26} color="#fff" />
-	  </View>
-	);
-}
+const BoostHeader = props => {
+  const { text } = props;
+  return (
+    <View style={styles.header}>
+      <Text style={styles.headerGreetingText}>{text}</Text>
+      <Icon name="mail" type="material" size={26} color="#fff" />
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
-	header: {
+  header: {
     marginHorizontal: 20,
     marginTop: 20,
     flexDirection: "row",
@@ -30,6 +26,5 @@ const styles = StyleSheet.create({
     fontFamily: "Raleway"
   }
 });
-
 
 export default BoostHeader;

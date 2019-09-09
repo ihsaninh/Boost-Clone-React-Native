@@ -3,12 +3,8 @@ import { Text, View, StatusBar } from "react-native";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import { createStackNavigator } from 'react-navigation'
 import { Icon } from "react-native-elements";
-import Home from "../screens/Home";
+import Home from "../screens/Home/Home";
 import BoostSpot from "../screens/BoostSpot";
-
-// BoostSpotStack = createStackNavigator({
-//   BoostSpot,
-// });
 
 const BottomTabs = createBottomTabNavigator(
   {

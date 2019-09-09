@@ -11,7 +11,10 @@ import {
   Dimensions
 } from "react-native";
 import { Icon } from "react-native-elements";
-import Bg from "../assets/img/bg2.png";
+import BoostHeader from "./components/BoostHeader";
+import BoostCash from "./components/BoostCash";
+import BoostQuiz from './components/BoostQuiz';
+import Bg from "../../assets/img/bg2.png";
 
 class Home extends Component {
   constructor(props) {
@@ -20,13 +23,12 @@ class Home extends Component {
       refreshing: false
     };
   }
+
   _onRefresh = () => {
     this.setState({ refreshing: true });
     setTimeout(() => this.setState({ refreshing: false }), 1000);
   };
   render() {
-    let dimensions = Dimensions.get("window");
-    let imageWidth = dimensions.width * 0.8;
     return (
       <View style={styles.container}>
         <ScrollView
@@ -42,27 +44,9 @@ class Home extends Component {
           <StatusBar backgroundColor="#C6251C" barStyle="light-content" />
           <View style={styles.content}>
             {/*boostheader*/}
-            <View style={styles.header}>
-              <Text style={styles.headerGreetingText}>Hello, Booster</Text>
-              <Icon name="mail" type="material" size={26} color="#fff" />
-            </View>
-
+            <BoostHeader text="Hello, Booster" />
             {/*cardcash*/}
-            <View style={styles.cardContainer}>
-              <View style={styles.cardContent}>
-                <View style={styles.cardContentText}>
-                  <Text style={styles.cardContentTitle}>BoostCash</Text>
-                  <Text style={styles.cardContentSubtitle}>CheckNow</Text>
-                </View>
-                <View style={styles.cardContentBanner}>
-                  <Image
-                    source={require("../assets/img/people.jpg")}
-                    style={styles.cardContentBannerImg}
-                  />
-                </View>
-              </View>
-            </View>
-
+            <BoostCash title="BoostCash" subtitle="CheckNow" />
             {/*boostmore card*/}
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>BoostMore</Text>
@@ -72,28 +56,28 @@ class Home extends Component {
                 <View style={styles.featureContent}>
                   <Image
                     style={styles.featureContentImg}
-                    source={require("../assets/img/reward.jpg")}
+                    source={require("../../assets/img/reward.jpg")}
                   />
                   <Text style={styles.featureContentLabel}>Get Lucky</Text>
                 </View>
                 <View style={styles.featureContent}>
                   <Image
                     style={styles.featureContentImg}
-                    source={require("../assets/img/invite.jpg")}
+                    source={require("../../assets/img/invite.jpg")}
                   />
                   <Text style={styles.featureContentLabel}>Invite</Text>
                 </View>
                 <View style={styles.featureContent}>
                   <Image
                     style={styles.featureContentImg}
-                    source={require("../assets/img/medicall.jpg")}
+                    source={require("../../assets/img/medicall.jpg")}
                   />
                   <Text style={styles.featureContentLabel}>MediCall</Text>
                 </View>
                 <View style={styles.featureContent}>
                   <Image
                     style={styles.featureContentImg}
-                    source={require("../assets/img/boostquest.jpg")}
+                    source={require("../../assets/img/boostquest.jpg")}
                   />
                   <Text style={styles.featureContentLabel}>BoostQuest</Text>
                 </View>
@@ -106,7 +90,7 @@ class Home extends Component {
             {/*banner*/}
             <View style={styles.sectionContainer}>
               <Image
-                source={require("../assets/img/banner.jpg")}
+                source={require("../../assets/img/banner.jpg")}
                 style={styles.bannerImg}
               />
             </View>
@@ -116,7 +100,7 @@ class Home extends Component {
             {/*banner2*/}
             <View style={styles.sectionContainer}>
               <Image
-                source={require("../assets/img/boost-promo.jpg")}
+                source={require("../../assets/img/boost-promo.jpg")}
                 style={{ height: 120, width: "100%" }}
                 resizeMode={"stretch"}
               />
@@ -135,7 +119,7 @@ class Home extends Component {
             {/*banner3*/}
             <View style={styles.sectionContainer}>
               <Image
-                source={require("../assets/img/fakta-kopi.jpg")}
+                source={require("../../assets/img/fakta-kopi.jpg")}
                 style={styles.bannerImg}
               />
             </View>
@@ -146,55 +130,11 @@ class Home extends Component {
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionContentTitle}>BOOST QUIZ</Text>
             </View>
-            <View style={styles.boostQuizContainer}>
-              <ScrollView
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                contentContainerStyle={styles.contentContainer}
-              >
-                <View style={[styles.boostQuizCard, { width: imageWidth }]}>
-                  <Image
-                    source={require("../assets/img/family.jpg")}
-                    style={[styles.boostQuizCardImg, { width: imageWidth }]}
-                  />
-                  <View style={styles.boostQuizCardInfo}>
-                    <Text style={styles.boostQuizCardInfoTitle}>
-                      Family Time bagi Millenials
-                    </Text>
-                    <Text>Kamu termasuk tipe yang mana?</Text>
-                  </View>
-                </View>
-                <View style={[styles.boostQuizCard, { width: imageWidth }]}>
-                  <Image
-                    source={require("../assets/img/kopi.jpg")}
-                    style={[styles.boostQuizCardImg, { width: imageWidth }]}
-                  />
-                  <View style={styles.boostQuizCardInfo}>
-                    <Text style={styles.boostQuizCardInfoTitle}>
-                      Cari tau mana kopi favoritmu!
-                    </Text>
-                    <Text>Buktikan kalau kamu pencinta kopi!</Text>
-                  </View>
-                </View>
-                <View style={[styles.boostQuizCard, { width: imageWidth }]}>
-                  <Image
-                    source={require("../assets/img/quiz.jpg")}
-                    style={[styles.boostQuizCardImg, { width: imageWidth }]}
-                  />
-                  <View style={styles.boostQuizCardInfo}>
-                    <Text style={styles.boostQuizCardInfoTitle}>
-                      Sepolos apa kamu saat SMA?
-                    </Text>
-                    <Text>Jangan ditutup-tutupin yang!</Text>
-                  </View>
-                </View>
-              </ScrollView>
-            </View>
-
+            <BoostQuiz />
             {/*banner4*/}
             <View style={styles.sectionContainer}>
               <Image
-                source={require("../assets/img/boost-battle-1.jpg")}
+                source={require("../../assets/img/boost-battle-1.jpg")}
                 style={{ height: 160, width: "100%" }}
                 resizeMode={"stretch"}
               />
@@ -202,7 +142,7 @@ class Home extends Component {
             {/*banner5*/}
             <View style={styles.sectionContainer}>
               <Image
-                source={require("../assets/img/boost-battle-2.jpg")}
+                source={require("../../assets/img/boost-battle-2.jpg")}
                 style={{ height: 160, width: "100%" }}
                 resizeMode={"stretch"}
               />
@@ -227,55 +167,6 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     marginBottom: 10
-  },
-  header: {
-    marginHorizontal: 20,
-    marginTop: 20,
-    flexDirection: "row",
-    justifyContent: "space-between"
-  },
-  headerGreetingText: {
-    fontSize: 23,
-    fontWeight: "bold",
-    color: "#fff",
-    fontFamily: "Raleway"
-  },
-  // top card section
-  cardContainer: {
-    height: 150,
-    width: "auto",
-    elevation: 1,
-    backgroundColor: "#fff",
-    marginTop: 35,
-    borderRadius: 5,
-    marginHorizontal: 20
-  },
-  cardContent: {
-    flexDirection: "row",
-    position: "relative"
-  },
-  cardContentText: {
-    flexDirection: "column",
-    marginTop: 50,
-    marginLeft: 20
-  },
-  cardContentTitle: {
-    color: "#757375",
-    fontSize: 18,
-    fontFamily: "Raleway"
-  },
-  cardContentSubtitle: {
-    color: "#0A8689",
-    fontSize: 18,
-    fontFamily: "Raleway"
-  },
-  cardContentBanner: {
-    position: "absolute",
-    right: 0
-  },
-  cardContentBannerImg: {
-    width: 150,
-    height: 150
   },
   // SECTION TITLE
   sectionContainer: {
@@ -340,7 +231,7 @@ const styles = StyleSheet.create({
   },
   // Boost Quiz
   boostQuizContainer: {
-    marginTop: 20
+    marginTop: 20,
   },
   contentContainer: {
     paddingLeft: 20
@@ -349,7 +240,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     marginRight: 10,
     borderColor: "#E1DFE1",
-    borderWidth: 1
+    borderWidth: 1,
   },
   boostQuizCardImg: {
     height: 150,

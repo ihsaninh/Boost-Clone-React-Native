@@ -41,12 +41,12 @@ const styles = StyleSheet.create({
   cardContentTitle: {
     color: "#757375",
     fontSize: 18,
-    fontFamily: "Raleway"
+    fontFamily: "Raleway-Medium"
   },
   cardContentSubtitle: {
     color: "#0A8689",
     fontSize: 18,
-    fontFamily: "Raleway"
+    fontFamily: "Raleway-Medium"
   },
   cardContentBanner: {
     position: "absolute",
@@ -54,7 +54,8 @@ const styles = StyleSheet.create({
   },
   cardContentBannerImg: {
     width: 150,
-    height: 150
+    height: 150,
+    borderRadius: 5
   }
 });
 

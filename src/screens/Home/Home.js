@@ -6,15 +6,15 @@ import {
   Image,
   StatusBar,
   ScrollView,
-  RefreshControl,
+  RefreshControl
 } from "react-native";
-import { Icon } from "react-native-elements";
 import BoostHeader from "./components/BoostHeader";
 import BoostCash from "./components/BoostCash";
 import BoostQuiz from "./components/BoostQuiz";
 import BoostFeature from "./components/BoostFeature";
-import Section from '../../library/components/Section';
-import Divider from '../../library/components/Divider';
+import Banner from "../../library/components/Banner";
+import Section from "../../library/components/Section";
+import Divider from "../../library/components/Divider";
 import Bg from "../../assets/img/bg2.png";
 
 class Home extends Component {
@@ -53,17 +53,16 @@ class Home extends Component {
             <BoostFeature />
             <Divider />
             <Section>
-              <Image
+              <Banner
                 source={require("../../assets/img/banner.jpg")}
-                style={styles.bannerImg}
+                height={120}
               />
             </Section>
             <Divider />
             <Section>
-              <Image
+              <Banner
                 source={require("../../assets/img/boost-promo.jpg")}
-                style={{ height: 120, width: "100%" }}
-                resizeMode={"stretch"}
+                height={120}
               />
             </Section>
             <Divider />
@@ -74,9 +73,9 @@ class Home extends Component {
               </Text>
             </Section>
             <Section>
-              <Image
+              <Banner
                 source={require("../../assets/img/fakta-kopi.jpg")}
-                style={styles.bannerImg}
+                height={150}
               />
             </Section>
             <Divider />
@@ -84,20 +83,16 @@ class Home extends Component {
               <Text style={styles.sectionContentTitle}>BOOST QUIZ</Text>
             </Section>
             <BoostQuiz />
-            {/*banner4*/}
             <Section>
-              <Image
+              <Banner
                 source={require("../../assets/img/boost-battle-1.jpg")}
-                style={{ height: 160, width: "100%" }}
-                resizeMode={"stretch"}
+                height={160}
               />
             </Section>
-            {/*banner5*/}
             <Section>
-              <Image
+              <Banner
                 source={require("../../assets/img/boost-battle-2.jpg")}
-                style={{ height: 160, width: "100%" }}
-                resizeMode={"stretch"}
+                height={160}
               />
             </Section>
           </View>
@@ -123,26 +118,23 @@ const styles = StyleSheet.create({
   },
   // SECTION TITLE
   sectionTitle: {
-    fontSize: 18
+    fontSize: 18,
+    fontFamily: "Raleway-Medium"
   },
   bannerImg: {
     width: "100%",
-    height: 150
-    // resizeMode: 'cover'
-  },
-  bannerImgScroll: {
-    borderRadius: 5,
-    marginTop: 20,
-    width: "90%",
-    height: 150
+    height: 150,
+    borderRadius: 5
   },
   // section content
   sectionContentTitle: {
     fontSize: 18,
-    fontWeight: "700"
+    fontFamily: "Raleway-Bold"
   },
   sectionContentSubtitle: {
-    fontSize: 16
+    paddingTop: 5,
+    fontSize: 16,
+    fontFamily: "Raleway-Regular"
   }
 });
 

@@ -26,7 +26,7 @@ const BoostQuiz = props => {
     {
       image: require("../../../assets/img/quiz.jpg"),
       title: "Sepolos apa kamu saat SMA?",
-      subtitle: "Jangan ditutup-tutupin yang!"
+      subtitle: "Jangan ditutup-tutupin ya!"
     }
   ];
   _listComponent = ({ item }) => {
@@ -38,7 +38,7 @@ const BoostQuiz = props => {
         />
         <View style={styles.boostQuizCardInfo}>
           <Text style={styles.boostQuizCardInfoTitle}>{item.title}</Text>
-          <Text>{item.subtitle}</Text>
+          <Text style={styles.boostQuizCardInfoSubtitle}>{item.subtitle}</Text>
         </View>
       </View>
     );
@@ -73,14 +73,19 @@ const styles = StyleSheet.create({
   boostQuizCardImg: {
     height: 150,
     borderTopRightRadius: 5,
-    borderTopLeftRadius: 5
+    borderTopLeftRadius: 5,
+    resizeMode: 'stretch'
   },
   boostQuizCardInfo: {
-    padding: 10
+    padding: 10,
   },
   boostQuizCardInfoTitle: {
-    fontWeight: "bold",
-    fontSize: 18
+    fontSize: 18,
+    fontFamily: "Raleway-Bold"
+  },
+  boostQuizCardInfoSubtitle: {
+    fontFamily: 'Raleway-Regular',
+    paddingTop: 5
   }
 });
 

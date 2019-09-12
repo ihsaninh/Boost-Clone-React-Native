@@ -59,7 +59,8 @@ const styles = StyleSheet.create({
   },
   featureContentLabel: {
     color: "#797779",
-    fontSize: 12
+    fontSize: 12,
+    fontFamily: "Raleway-Regular"
   }
 });
 

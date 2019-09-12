@@ -21,7 +21,7 @@ class Register extends Component {
               resizeMode="cover"
             />
           </View>
-          <Text style={{ fontSize: 16, paddingTop: 20 }}>
+          <Text style={{ fontSize: 16, paddingTop: 20, fontFamily: 'Raleway-Regular' }}>
             Masukkan nomor telepon kamu dan verifikasi menggunakan mode OTP yang
             dikirimkan ke nomor kamu.
           </Text>
@@ -83,7 +83,7 @@ class Register extends Component {
                 paddingTop: 15,
                 color: "#9C9A9C",
                 textAlign: "center",
-                paddingHorizontal: 10
+                paddingHorizontal: 10,
               }}
             >
               By registering, I agree to the{" "}
@@ -110,7 +110,8 @@ const styles = StyleSheet.create({
     position: "relative"
   },
   labelInput: {
-    fontSize: 15
+    fontSize: 15,
+    fontFamily: 'Raleway-Regular'
   }
 });
 export default Register;

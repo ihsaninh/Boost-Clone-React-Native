@@ -21,9 +21,8 @@ const styles = StyleSheet.create({
   },
   headerGreetingText: {
     fontSize: 23,
-    fontWeight: "bold",
     color: "#fff",
-    fontFamily: "Raleway"
+    fontFamily: "Raleway-SemiBold"
   }
 });
 

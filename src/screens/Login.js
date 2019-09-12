@@ -12,7 +12,7 @@ class Login extends Component {
     return {
       headerRight: (
         <TouchableOpacity onPress={() => navigation.navigate("Register")}>
-          <Text style={{ paddingRight: 20, fontSize: 16, color: "#aaa" }}>
+          <Text style={styles.headerRightStyle}>
             DAFTAR
           </Text>
         </TouchableOpacity>
@@ -26,10 +26,10 @@ class Login extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={{ marginTop: 40, alignItems: "center" }}>
-          <Text style={{ fontSize: 23 }}>MASUK</Text>
+        <View style={styles.loginLabelWrapper}>
+          <Text style={styles.loginLabel}>MASUK</Text>
         </View>
-        <View style={{ marginHorizontal: 20, marginTop: 40 }}>
+        <View style={styles.formWrapper}>
           <FloatingLabel
             labelStyle={styles.labelInput}
             inputStyle={styles.input}
@@ -48,18 +48,13 @@ class Login extends Component {
           >
             Masukkan Password
           </FloatingLabel>
-          <Text style={{ textAlign: "right", color: "#aaa" }}>
+          <Text style={styles.forgotPasswordLabel}>
             Lupa password kamu?
           </Text>
           <TouchableOpacity
-            style={{
-              borderWidth: 1,
-              borderColor: "#EF3026",
-              padding: 10,
-              marginTop: 30
-            }}
+            style={styles.buttonContainer}
           >
-            <Text style={{ color: "#EF3026", textAlign: "center" }}>MASUK</Text>
+            <Text style={styles.buttonLabel}>MASUK</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -81,7 +76,42 @@ const styles = StyleSheet.create({
     marginBottom: 30
   },
   labelInput: {
-    fontSize: 15
+    fontSize: 15,
+    fontFamily: 'Raleway-Regular'
+  },
+  headerRightStyle: {
+    paddingRight: 20, 
+    fontSize: 16, 
+    color: "#aaa", 
+    fontFamily: 'Raleway-Regular'
+  },
+  loginLabelWrapper: {
+    marginTop: 40, 
+    alignItems: "center"
+  },
+  loginLabel: {
+    fontSize: 23, 
+    fontFamily: 'Raleway-SemiBold'
+  },
+  formWrapper: {
+    marginHorizontal: 20, 
+    marginTop: 40
+  },
+  forgotPasswordLabel: {
+    textAlign: "right", 
+    color: "#aaa", 
+    fontFamily: 'Raleway-Regular'
+  },
+  buttonContainer: {
+    borderWidth: 1,
+    borderColor: "#EF3026",
+    padding: 10,
+    marginTop: 30
+  },
+  buttonLabel: {
+    color: "#EF3026", 
+    textAlign: "center", 
+    fontFamily: 'Raleway-SemiBold'
   }
 });
 

@@ -4,7 +4,7 @@ import {
 	StyleSheet
 } from 'react-native';
 
-const Section = (props) => {
+const Section = props => {
 	return (
 	  <View style={styles.sectionContainer}>
 	  	{props.children}

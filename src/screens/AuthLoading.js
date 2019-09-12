@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { ImageBackground } from "react-native";
+import { ImageBackground, StyleSheet } from "react-native";
 import { withNavigation } from "react-navigation";
+import splashImage from "../assets/img/splash-screen.jpg";
 
 class AuthLoading extends Component {
   componentDidMount() {
@@ -11,10 +12,18 @@ class AuthLoading extends Component {
   render() {
     return (
       <ImageBackground
-        source={require("../assets/img/splash-screen.jpg")}
-        style={{ width: "100%", height: "100%" }}
+        source={splashImage}
+        style={styles.imageStyle}
       />
     );
   }
 }
+
+const styles = StyleSheet.create({
+  imageStyle: {
+    width: "100%", 
+    height: "100%" 
+  }
+})
+
 export default withNavigation(AuthLoading);

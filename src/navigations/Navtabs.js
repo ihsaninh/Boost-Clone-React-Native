@@ -1,10 +1,12 @@
 import React from "react";
-import { Text, View, StatusBar } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import { createStackNavigator } from 'react-navigation'
 import { Icon } from "react-native-elements";
+import Colors from "../library/utils/Colors";
 import Home from "../screens/Home/Home";
 import BoostSpot from "../screens/BoostSpot";
+import Login from "../screens/Login";
 
 const BottomTabs = createBottomTabNavigator(
   {
@@ -12,12 +14,12 @@ const BottomTabs = createBottomTabNavigator(
       screen: Home,
       navigationOptions: {
         title: "Home",
-        tabBarIcon: ({ tintColor, focused }) => (
+        tabBarIcon: ({ focused }) => (
           <Icon
             name="home"
             type="antdesign"
             size={25}
-            color={focused ? "#EF3026" : "#A7A5A7"}
+            color={focused ? Colors.primary : Colors.secondary}
           />
         )
       }
@@ -31,65 +33,74 @@ const BottomTabs = createBottomTabNavigator(
       }),
       navigationOptions: {
         title: "Boost Spot",
-        tabBarIcon: ({ tintColor, focused }) => (
+        tabBarIcon: ({ focused }) => (
           <Icon
             name="store"
             type="material"
             size={25}
-            color={focused ? "#EF3026" : "#A7A5A7"}
+            color={focused ? Colors.primary : Colors.secondary}
           />
         )
       }
     },
     Boost: {
-      screen: BoostSpot,
+      screen: createStackNavigator({
+        Login: {
+            screen: Login,
+            navigationOptions: { gesturesEnabled: true}
+        }
+      }),
       navigationOptions: {
         title: "",
-        tabBarIcon: ({ tintColor, focused }) => (
+        tabBarIcon: () => (
           <View
-            style={{
-              marginTop: -10,
-              backgroundColor: "red",
-              borderRadius: 50,
-              height: 60,
-              width: 60
-            }}
+            style={styles.centerTabButton}
           >
             <Icon
               name="heart"
               type="feather"
               size={28}
-              color={"#fff"}
-              iconStyle={{ marginTop: 15, transform: [{ rotate: "50deg" }] }}
+              color={Colors.white}
+              iconStyle={styles.centerTabButtonIcon}
             />
           </View>
         )
       }
     },
     Deals: {
-      screen: BoostSpot,
+      screen: createStackNavigator({
+        Login: {
+            screen: Login,
+            navigationOptions: { gesturesEnabled: true}
+        }
+      }),
       navigationOptions: {
         title: "My Deals",
-        tabBarIcon: ({ tintColor, focused }) => (
+        tabBarIcon: ({ focused }) => (
           <Icon
             name="ticket-percent"
             type="material-community"
             size={25}
-            color={focused ? "#EF3026" : "#A7A5A7"}
+            color={focused ? Colors.secondary : Colors.secondary}
           />
         )
       }
     },
     Profile: {
-      screen: BoostSpot,
+      screen: createStackNavigator({
+        Login: {
+            screen: Login,
+            navigationOptions: { gesturesEnabled: true}
+        }
+      }),
       navigationOptions: {
         title: "Profile",
-        tabBarIcon: ({ tintColor, focused }) => (
+        tabBarIcon: ({ focused }) => (
           <Icon
             name="user-circle-o"
             type="font-awesome"
             size={23}
-            color={focused ? "#EF3026" : "#A7A5A7"}
+            color={focused ? Colors.secondary : Colors.secondary}
           />
         )
       }
@@ -98,11 +109,29 @@ const BottomTabs = createBottomTabNavigator(
   {
     initialRouteName: "Home",
     tabBarOptions: {
-      activeTintColor: "#EF3026",
-      inactiveTintColor: "#A7A5A7"
+      activeTintColor: Colors.secondary,
+      inactiveTintColor: Colors.secondary,
+      labelStyle: {
+        fontFamily: 'Raleway-Regular',
+        marginTop: -5
+      }
     },
-    barStyle: { backgroundColor: "#fff" }
+    barStyle: { backgroundColor: "#fff"}
   }
 );
+
+const styles = StyleSheet.create({
+  centerTabButton: {
+    marginTop: -10,
+    backgroundColor: Colors.primary,
+    borderRadius: 50,
+    height: 60,
+    width: 60
+  },
+  centerTabButtonIcon: {
+    marginTop: 15, 
+    transform: [{ rotate: "50deg" }]
+  }
+})
 
 export default BottomTabs;

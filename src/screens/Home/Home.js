@@ -1,20 +1,7 @@
 import React, { Component } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  StatusBar,
-  ScrollView,
-  RefreshControl
-} from "react-native";
-import BoostHeader from "./components/BoostHeader";
-import BoostCash from "./components/BoostCash";
-import BoostQuiz from "./components/BoostQuiz";
-import BoostFeature from "./components/BoostFeature";
-import Banner from "../../library/components/Banner";
-import Section from "../../library/components/Section";
-import Divider from "../../library/components/Divider";
+import { View, Text, StyleSheet, Image, StatusBar, ScrollView, RefreshControl } from "react-native";
+import { BoostHeader, BoostCash, BoostQuiz, BoostFeature} from './components';
+import { Banner, Section, Divider } from '../../library/components/';
 import Bg from "../../assets/img/bg2.png";
 
 class Home extends Component {

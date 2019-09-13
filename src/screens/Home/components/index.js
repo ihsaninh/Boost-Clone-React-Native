@@ -1,7 +1,7 @@
-import BoostHeader from "./components/BoostHeader";
-import BoostCash from "./components/BoostCash";
-import BoostQuiz from "./components/BoostQuiz";
-import BoostFeature from "./components/BoostFeature";
+import BoostHeader from "./BoostHeader";
+import BoostCash from "./BoostCash";
+import BoostQuiz from "./BoostQuiz";
+import BoostFeature from "./BoostFeature";
 
 export {
 	BoostHeader,
